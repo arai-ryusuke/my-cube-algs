@@ -1,7 +1,7 @@
 {
   "id": "pll-gc",
   "category": "pll",
-  "name": "PLL Gc (G-perm c)",
+  "name": "PLL Gc",
   "algorithms": [
     {
       "id": "primary",
@@ -10,7 +10,7 @@
     },
     {
       "id": "alt-1",
-      "notation": "y2 R2 U' R U' R U R' U R2 D' U R U' R' D",
+      "notation": "y2 R2' U' R U' R U R' U R2 D' U R U' R' D",
       "is_primary": false
     }
   ],
