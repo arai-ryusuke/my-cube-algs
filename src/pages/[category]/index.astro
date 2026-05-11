@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CubePlayer from '../../components/CubePlayer.astro';
+import {
+  CATEGORIES,
+  CATEGORY_LABELS,
+  casesByCategory,
+  primaryAlg,
+  link,
+  type Category,
+} from '../../lib/cases';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+interface Props {
+  category: Category;
+}
+
+const { category } = Astro.props;
+const cases = casesByCategory(category);
+---
+
+<Layout title={CATEGORY_LABELS[category]}>
+  <h1>{CATEGORY_LABELS[category]} <span class="count">({cases.length})</span></h1>
+
+  {
+    cases.length === 0 ? (
+      <p class="empty">まだケースがありません。</p>
+    ) : (
+      <div class="grid">
+        {cases.map((c) => {
+          const alg = primaryAlg(c);
+          return (
+            <a class="card" href={link(`${category}/${c.id}/`)}>
+              <CubePlayer alg={alg.notation} setup={c.setup} size={180} />
+              <div class="meta">
+                <h2>{c.name}</h2>
+                <code>{alg.notation}</code>
+                {c.algorithms.length > 1 && (
+                  <span class="alt-badge">+{c.algorithms.length - 1} alt</span>
+                )}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    )
+  }
+
+  <style>
+    h1 {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .count {
+      font-size: 1rem;
+      color: #888;
+      font-weight: 400;
+    }
+    .empty {
+      color: #888;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background: white;
+      text-decoration: none;
+      color: inherit;
+      gap: 8px;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .meta {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta h2 {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .meta code {
+      font-size: 0.8rem;
+      word-break: break-word;
+    }
+    .alt-badge {
+      align-self: flex-start;
+      font-size: 0.7rem;
+      background: #2c3e50;
+      color: white;
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</Layout>

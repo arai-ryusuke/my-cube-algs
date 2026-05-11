@@ -1,0 +1,88 @@
+---
+import { link } from '../lib/cases';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const fullTitle = title === 'My Cube Algs' ? title : `${title} | My Cube Algs`;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <script type="module" src="https://cdn.cubing.net/v0/js/cubing/twisty"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href={link()}>My Cube Algs</a>
+      <nav>
+        <a href={link('oll/')}>OLL</a>
+        <a href={link('pll/')}>PLL</a>
+        <a href={link('f2l/')}>F2L</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <style is:global>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, -apple-system, 'Hiragino Sans', sans-serif;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 16px 24px 48px;
+        color: #222;
+        background: #fafafa;
+      }
+      a {
+        color: #2c3e50;
+      }
+      code {
+        font-family: 'SF Mono', Consolas, monospace;
+        background: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      h1,
+      h2 {
+        margin: 0 0 12px;
+      }
+    </style>
+    <style>
+      .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 24px;
+      }
+      .logo {
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      nav {
+        display: flex;
+        gap: 16px;
+      }
+      nav a {
+        text-decoration: none;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+      nav a:hover {
+        background: #e8e8e8;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CubePlayer from '../../components/CubePlayer.astro';
+import { allCases, CATEGORY_LABELS, link, type CaseData } from '../../lib/cases';
+
+export function getStaticPaths() {
+  return allCases.map((c) => ({
+    params: { category: c.category, id: c.id },
+    props: { caseData: c },
+  }));
+}
+
+interface Props {
+  caseData: CaseData;
+}
+
+const { caseData } = Astro.props;
+---
+
+<Layout title={caseData.name}>
+  <p class="breadcrumb">
+    <a href={link(`${caseData.category}/`)}>{CATEGORY_LABELS[caseData.category]}</a>
+    <span class="sep">/</span>
+    <span>{caseData.id}</span>
+  </p>
+
+  <h1>{caseData.name}</h1>
+
+  <p class="setup">
+    <span class="key">setup</span>
+    <code>{caseData.setup}</code>
+  </p>
+
+  {caseData.tags && caseData.tags.length > 0 && (
+    <div class="tags">
+      {caseData.tags.map((t) => <span class="tag">{t}</span>)}
+    </div>
+  )}
+
+  <div class="algorithms">
+    {
+      caseData.algorithms.map((a, i) => (
+        <section class:list={['alg-card', { primary: a.is_primary }]}>
+          <header>
+            <h2>
+              {a.is_primary ? 'Primary' : `Alternative ${i}`}
+              {a.learned_at && <span class="date">learned {a.learned_at}</span>}
+            </h2>
+            <code class="notation">{a.notation}</code>
+          </header>
+          <div class="body">
+            <CubePlayer alg={a.notation} setup={caseData.setup} size={300} />
+            <dl>
+              {a.comment && (
+                <>
+                  <dt>comment</dt>
+                  <dd>{a.comment}</dd>
+                </>
+              )}
+              {a.fingertricks && (
+                <>
+                  <dt>fingertricks</dt>
+                  <dd>{a.fingertricks}</dd>
+                </>
+              )}
+            </dl>
+          </div>
+        </section>
+      ))
+    }
+  </div>
+
+  {
+    caseData.notes && (
+      <section class="notes">
+        <h2>Notes</h2>
+        <p>{caseData.notes}</p>
+      </section>
+    )
+  }
+
+  <style>
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: #888;
+      margin: 0 0 8px;
+    }
+    .breadcrumb a {
+      color: #888;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .sep {
+      margin: 0 6px;
+    }
+    .setup {
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .setup .key {
+      font-size: 0.75rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tags {
+      display: flex;
+      gap: 6px;
+      margin: 0 0 20px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: #eef2f7;
+      color: #5a6c80;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+    }
+    .algorithms {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .alg-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background: white;
+      padding: 16px 20px;
+    }
+    .alg-card.primary {
+      border-color: #2c3e50;
+    }
+    .alg-card > header {
+      margin-bottom: 12px;
+    }
+    .alg-card h2 {
+      font-size: 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .date {
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 400;
+    }
+    .notation {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.95rem;
+      background: #f4f4f4;
+    }
+    .body {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    dl {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    dt {
+      font-weight: 600;
+      color: #555;
+      margin-top: 8px;
+    }
+    dt:first-child {
+      margin-top: 0;
+    }
+    dd {
+      margin: 2px 0 0;
+    }
+    .notes {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: #fffbea;
+      border-left: 4px solid #f5c842;
+      border-radius: 0 4px 4px 0;
+    }
+    .notes h2 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #8a6d00;
+    }
+    .notes p {
+      margin: 8px 0 0;
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .body {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Layout>
