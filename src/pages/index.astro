@@ -1,0 +1,133 @@
+---
+import CubePlayer from '../components/CubePlayer.astro';
+import oll21 from '../../data/oll/oll-21.json';
+import pllAa from '../../data/pll/pll-aa.json';
+import pllGc from '../../data/pll/pll-gc.json';
+import f2l01 from '../../data/f2l/f2l-01.json';
+
+const cases = [oll21, pllAa, pllGc, f2l01];
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Cube Algs</title>
+    <script type="module" src="https://cdn.cubing.net/v0/js/cubing/twisty"></script>
+  </head>
+  <body>
+    <header>
+      <h1>My Cube Algs</h1>
+      <p>Phase 1 — twisty-player smoke test (各カテゴリ 1 件ずつ)</p>
+    </header>
+
+    <main>
+      {
+        cases.map((c) => {
+          const primary = c.algorithms.find((a) => a.is_primary) ?? c.algorithms[0];
+          return (
+            <section class="case">
+              <h2>
+                <span class="badge">{c.category.toUpperCase()}</span>
+                {c.name}
+              </h2>
+              <div class="case-body">
+                <CubePlayer alg={primary.notation} setup={c.setup} />
+                <dl>
+                  <dt>setup</dt>
+                  <dd><code>{c.setup}</code></dd>
+                  <dt>algorithm</dt>
+                  <dd><code>{primary.notation}</code></dd>
+                  {primary.comment && (
+                    <>
+                      <dt>comment</dt>
+                      <dd>{primary.comment}</dd>
+                    </>
+                  )}
+                  {c.notes && (
+                    <>
+                      <dt>notes</dt>
+                      <dd>{c.notes}</dd>
+                    </>
+                  )}
+                </dl>
+              </div>
+            </section>
+          );
+        })
+      }
+    </main>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, 'Hiragino Sans', sans-serif;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px;
+        color: #222;
+      }
+      header {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 24px;
+      }
+      h1 {
+        margin: 0 0 4px;
+      }
+      .case {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin-bottom: 24px;
+      }
+      .case h2 {
+        margin: 0 0 12px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .badge {
+        display: inline-block;
+        background: #2c3e50;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+      .case-body {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: start;
+      }
+      dl {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+      dt {
+        font-weight: 600;
+        margin-top: 8px;
+        color: #555;
+      }
+      dt:first-child {
+        margin-top: 0;
+      }
+      dd {
+        margin: 2px 0 0;
+      }
+      code {
+        font-family: 'SF Mono', Consolas, monospace;
+        background: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 3px;
+      }
+      @media (max-width: 640px) {
+        .case-body {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>

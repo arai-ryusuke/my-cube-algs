@@ -1,0 +1,18 @@
+---
+interface Props {
+  alg: string;
+  setup?: string;
+  puzzle?: string;
+}
+
+const { alg, setup, puzzle = '3x3x3' } = Astro.props;
+---
+
+<twisty-player
+  puzzle={puzzle}
+  alg={alg}
+  experimental-setup-alg={setup}
+  background="none"
+  control-panel="bottom-row"
+  style="width: 320px; height: 320px;"
+></twisty-player>

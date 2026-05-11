@@ -1,0 +1,24 @@
+{
+  "id": "oll-21",
+  "category": "oll",
+  "name": "OLL 21 (H / Double Sune)",
+  "setup": "R U2 R' U' R U R' U' R U' R'",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "R U R' U R U' R' U R U2 R'",
+      "comment": "現在のメイン手順 (Sune + Anti-Sune)",
+      "fingertricks": "右手中心",
+      "learned_at": "2025-04-01",
+      "is_primary": true
+    },
+    {
+      "id": "alt-1",
+      "notation": "F R U R' U' R U R' U' R U R' U' F'",
+      "comment": "練習中の別解 (F sexy F)",
+      "is_primary": false
+    }
+  ],
+  "tags": ["oll", "all-corners-oriented", "h-shape"],
+  "notes": "認識ポイント: トップ面のエッジは十字、コーナーは全方向に向きが揃っていない H 形状"
+}
