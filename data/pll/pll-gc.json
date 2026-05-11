@@ -5,12 +5,12 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R2 F2 R U2 R U2 R' F R U R' U' R' F R2",
+      "notation": "R'2 F2 R U'2 R U2 R' F R U R' U' R' F R2",
       "is_primary": true
     },
     {
       "id": "alt-1",
-      "notation": "x2 R2 U' R U' R U R' U R2 D' U R U' R' D",
+      "notation": "y2 R2 U' R U' R U R' U R2 D' U R U' R' D",
       "is_primary": false
     }
   ],
