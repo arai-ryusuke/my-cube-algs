@@ -1,0 +1,13 @@
+{
+  "id": "pll-gd",
+  "category": "pll",
+  "name": "PLL Gd (G-perm d)",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "D' R U R' U' D R2 U' R U' R' U R' U R2",
+      "is_primary": true
+    }
+  ],
+  "tags": ["pll", "g-perm"]
+}
