@@ -5,7 +5,7 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R'2 F2 R U'2 R U2 R' F R U R' U' R' F R2",
+      "notation": "R2' F2 R U2' R U2 R' F R U R' U' R' F R2",
       "is_primary": true
     },
     {
