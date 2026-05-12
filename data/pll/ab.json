@@ -5,8 +5,13 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R",
+      "notation": "x R2' D2 R U R' D2 R U' R x'",
       "is_primary": true
+    },
+    {
+      "id": "alternative",
+      "notation": "y x' R U' R D2 R' U R D2 R2 x",
+      "is_primary": false
     }
   ]
 }

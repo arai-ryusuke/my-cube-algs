@@ -9,6 +9,11 @@
       "comment": "標準的な Aa 手順 (x ローテ起点)",
       "fingertricks": "左手親指したリグリップ",
       "is_primary": true
+    },
+    {
+      "id" : "primary",
+      "notation": "y x' R2 D2 R' U' R D2 R' U R' x",
+      "is_primary": false
     }
   ]
 }
