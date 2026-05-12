@@ -1,5 +1,5 @@
 {
-  "id": "pll-aa",
+  "id": "aa",
   "category": "pll",
   "name": "PLL Aa",
   "algorithms": [
@@ -8,9 +8,7 @@
       "notation": "x R' U R' D2 R U' R' D2 R2 x'",
       "comment": "標準的な Aa 手順 (x ローテ起点)",
       "fingertricks": "左手親指したリグリップ",
-      "learned_at": "2025-03-15",
       "is_primary": true
     }
-  ],
-  "tags": ["pll", "a-perm"]
+  ]
 }

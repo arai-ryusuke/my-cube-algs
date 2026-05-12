@@ -31,21 +31,12 @@ const { caseData } = Astro.props;
     <code>{caseData.setup}</code>
   </p>
 
-  {caseData.tags && caseData.tags.length > 0 && (
-    <div class="tags">
-      {caseData.tags.map((t) => <span class="tag">{t}</span>)}
-    </div>
-  )}
-
   <div class="algorithms">
     {
       caseData.algorithms.map((a, i) => (
         <section class:list={['alg-card', { primary: a.is_primary }]}>
           <header>
-            <h2>
-              {a.is_primary ? 'Primary' : `Alternative ${i}`}
-              {a.learned_at && <span class="date">learned {a.learned_at}</span>}
-            </h2>
+            <h2>{a.is_primary ? 'Primary' : `Alternative ${i}`}</h2>
             <code class="notation">{a.notation}</code>
           </header>
           <div class="body">
@@ -108,19 +99,6 @@ const { caseData } = Astro.props;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .tags {
-      display: flex;
-      gap: 6px;
-      margin: 0 0 20px;
-      flex-wrap: wrap;
-    }
-    .tag {
-      background: #eef2f7;
-      color: #5a6c80;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 0.75rem;
-    }
     .algorithms {
       display: flex;
       flex-direction: column;
@@ -140,14 +118,6 @@ const { caseData } = Astro.props;
     }
     .alg-card h2 {
       font-size: 1rem;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-    }
-    .date {
-      font-size: 0.75rem;
-      color: #888;
-      font-weight: 400;
     }
     .notation {
       display: inline-block;

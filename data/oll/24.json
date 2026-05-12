@@ -1,5 +1,5 @@
 {
-  "id": "oll-24",
+  "id": "24",
   "category": "oll",
   "name": "OLL 24 (十字T)",
   "algorithms": [
@@ -8,7 +8,6 @@
       "notation": "r U R' U' r' F R F'",
       "comment": "現在のメイン手順 (Sune + Anti-Sune)",
       "fingertricks": "ワイドセクシー ワイドスレッジ",
-      "learned_at": "2025-04-01",
       "is_primary": true
     }
   ]

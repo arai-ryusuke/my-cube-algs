@@ -1,15 +1,13 @@
 {
-  "id": "f2l-01",
+  "id": "01",
   "category": "f2l",
   "name": "F2L 1 T化済み",
   "algorithms": [
     {
       "id": "primary",
       "notation": "R U R'",
-      "learned_at": "2024-12-01",
       "is_primary": true
     }
   ],
-  "tags": ["f2l", "basic", "fr-slot"],
   "notes": "認識ポイント: ペアが既にできており、すぐに挿入できる最短ケース"
 }

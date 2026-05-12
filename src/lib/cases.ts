@@ -5,7 +5,6 @@ export interface Algorithm {
   notation: string;
   comment?: string;
   fingertricks?: string;
-  learned_at?: string;
   is_primary?: boolean;
 }
 
@@ -15,7 +14,6 @@ interface CaseDataRaw {
   name: string;
   setup?: string;
   algorithms: Algorithm[];
-  tags?: string[];
   notes?: string;
 }
 

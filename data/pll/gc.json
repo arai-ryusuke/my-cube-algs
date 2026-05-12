@@ -1,5 +1,5 @@
 {
-  "id": "pll-gc",
+  "id": "gc",
   "category": "pll",
   "name": "PLL Gc",
   "algorithms": [
@@ -13,6 +13,5 @@
       "notation": "y2 R2' U' R U' R U R' U R2 D' U R U' R' D",
       "is_primary": false
     }
-  ],
-  "tags": ["pll", "g-perm"]
+  ]
 }
