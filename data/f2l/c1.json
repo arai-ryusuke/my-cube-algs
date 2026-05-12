@@ -5,12 +5,17 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R U' R' U R U2 R' U R U' R'",
+      "notation": "L' U L U L' U' L U2' L' U L",
       "is_primary": true
     },
     {
       "id": "keyhole",
-      "notation": "D' L' U' L U L' U' L D",
+      "notation": "D R U R' U' R U R' D'",
+      "is_primary": false
+    },
+    {
+      "id": "alternative",
+      "notation": "y' R U' R' U R U2' R' U R U' R'",
       "is_primary": false
     }
   ]
