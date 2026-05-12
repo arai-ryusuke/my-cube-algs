@@ -10,7 +10,7 @@
     },
     {
       "id": "alternative",
-      "notation": "y U' L' U L F' L F' L'",
+      "notation": "y U' L' U L F' L F L'",
       "is_primary": false
     }
   ]

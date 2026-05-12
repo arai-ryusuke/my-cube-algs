@@ -8,10 +8,10 @@ interface Props {
 
 const { alg, setup, puzzle = '3x3x3', size = 320 } = Astro.props;
 
-// Prepend z2 so the yellow face ends up on U (matches speedcubing OLL/PLL view).
-// Net effect of (z2 . setup . alg) is just z2 since alg = inverse(setup),
+// Prepend x2 so the yellow face ends up on U (matches speedcubing OLL/PLL view).
+// Net effect of (x2 . setup . alg) is just x2 since alg = inverse(setup),
 // so the cube finishes "solved with yellow on top".
-const setupWithOrientation = setup ? `z2 ${setup}` : 'z2';
+const setupWithOrientation = setup ? `x2 ${setup}` : 'x2';
 ---
 
 <twisty-player
