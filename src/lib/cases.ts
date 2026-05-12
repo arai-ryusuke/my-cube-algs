@@ -33,6 +33,17 @@ export function primaryAlg(c: { algorithms: Algorithm[] }): Algorithm {
   return c.algorithms.find((a) => a.is_primary) ?? c.algorithms[0];
 }
 
+// Display label derived from the algorithm's id.
+// "primary" + is_primary -> "Primary", "keyhole" -> "Keyhole", "alt-1" -> "Alt 1".
+export function algLabel(a: Algorithm): string {
+  if (a.is_primary) return 'Primary';
+  return a.id
+    .split(/[-_]/)
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
 // Invert a standard whitespace-separated algorithm string.
 // Handles base/prime/double-turn tokens (R, R', R2, R2', x, Uw, Mw2, ...).
 // Does NOT handle parenthesized groups or commutator/conjugate brackets.

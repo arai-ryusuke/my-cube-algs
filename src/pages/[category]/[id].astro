@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CubePlayer from '../../components/CubePlayer.astro';
-import { allCases, CATEGORY_LABELS, link, type CaseData } from '../../lib/cases';
+import { allCases, algLabel, CATEGORY_LABELS, link, type CaseData } from '../../lib/cases';
 
 export function getStaticPaths() {
   return allCases.map((c) => ({
@@ -33,10 +33,10 @@ const { caseData } = Astro.props;
 
   <div class="algorithms">
     {
-      caseData.algorithms.map((a, i) => (
+      caseData.algorithms.map((a) => (
         <section class:list={['alg-card', { primary: a.is_primary }]}>
           <header>
-            <h2>{a.is_primary ? 'Primary' : `Alternative ${i}`}</h2>
+            <h2>{algLabel(a)}</h2>
             <code class="notation">{a.notation}</code>
           </header>
           <div class="body">
