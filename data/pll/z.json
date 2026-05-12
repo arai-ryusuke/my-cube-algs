@@ -1,0 +1,12 @@
+{
+  "id": "z",
+  "category": "pll",
+  "name": "PLL Z",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "R",
+      "is_primary": true
+    }
+  ]
+}

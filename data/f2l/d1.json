@@ -1,0 +1,12 @@
+{
+  "id": "d1",
+  "category": "f2l",
+  "name": "F2L D1",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "R",
+      "is_primary": true
+    }
+  ]
+}

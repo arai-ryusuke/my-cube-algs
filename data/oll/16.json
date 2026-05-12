@@ -1,0 +1,12 @@
+{
+  "id": "16",
+  "category": "oll",
+  "name": "OLL 16",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "R",
+      "is_primary": true
+    }
+  ]
+}

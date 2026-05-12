@@ -1,0 +1,12 @@
+{
+  "id": "ua",
+  "category": "pll",
+  "name": "PLL Ua",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "R",
+      "is_primary": true
+    }
+  ]
+}
