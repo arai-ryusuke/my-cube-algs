@@ -5,7 +5,7 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "L' U L U' L' U L U2 L' U2' L",
+      "notation": "L' U L U' L' U L U2 L' U L",
       "is_primary": true
     },
     {
