@@ -11,7 +11,7 @@
       "is_primary": true
     },
     {
-      "id" : "primary",
+      "id" : "alternative",
       "notation": "y x' R2 D2 R' U' R D2 R' U R' x",
       "is_primary": false
     }
