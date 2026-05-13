@@ -5,8 +5,20 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R",
+      "notation": "U' R U R' U F' U' F",
       "is_primary": true
+    },
+    {
+      "id": "M-gen",
+      "notation": "U M' U R U' r' R U' R'"
+    },
+    {
+      "id": "S-gen",
+      "notation": "U R U' S' R' U' R S R'"
+    },
+    {
+      "id": "y",
+      "notation":"y"
     }
   ]
 }
