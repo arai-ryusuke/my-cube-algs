@@ -5,8 +5,12 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R",
+      "notation": "U L' U L U2 L' U L",
       "is_primary": true
+    },
+    {
+      "id": "keyhole",
+      "notation": "U' D R U R' D'"
     }
   ]
 }
