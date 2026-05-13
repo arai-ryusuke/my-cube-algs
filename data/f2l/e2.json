@@ -5,12 +5,12 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R U R' U' R U R'",
+      "notation": "R U' R' U R U' R'",
       "is_primary": true
     },
     {
       "id": "alternative",
-      "notation": "y L F' L' F U' L' U L",
+      "notation": "y L' U' L U F' L F L'",
       "is_primary": false
     }
   ]
