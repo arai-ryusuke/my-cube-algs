@@ -1,0 +1,12 @@
+{
+  "id": "b1",
+  "category": "f2l",
+  "name": "F2L B1 BR Slot",
+  "algorithms": [
+    {
+      "id": "primary",
+      "notation": "U R' F R F' R' U' R",
+      "is_primary": true
+    }
+  ]
+}
