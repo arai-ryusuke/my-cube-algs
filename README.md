@@ -1,6 +1,6 @@
 # My Cube Algs
 
-スピードキューブ(3x3x3)の OLL / PLL / F2L 手順を JSON で管理し、cubing.js の `<twisty-player>` で再生確認できる静的サイト。
+スピードキューブ(3x3x3)の OLL / PLL / F2L 手順を JSON で管理し、cubing.js の `<twisty-player>` で再生確認できる静的サイト。3BLD のエッジ 3-style 整理メモ(Markdown)も公開している。
 
 **Live:** https://arai-ryusuke.github.io/my-cube-algs/
 
@@ -20,10 +20,12 @@ data/
   f2l/    F2L ケース
 src/
   components/CubePlayer.astro   twisty-player ラッパー (z2 を自動付与)
+  docs/3bld-edge-tree.md        3BLD エッジ 3-style 整理メモ (AI 生成、出典は文書冒頭に記載)
   layouts/Layout.astro          共通ヘッダ + cubing.js CDN script
   lib/cases.ts                  import.meta.glob でデータ自動収集
   pages/
     index.astro                 ランディング
+    3bld/index.astro            3BLD メモ表示ページ
     [category]/index.astro      カテゴリ一覧
     [category]/[id].astro       個別ケース詳細
 ```
