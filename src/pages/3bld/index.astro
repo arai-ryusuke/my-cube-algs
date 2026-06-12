@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Content as Memo } from '../../docs/3bld-edge-tree.md';
+---
+
+<Layout title="3BLD">
+  <article class="memo">
+    <Memo />
+  </article>
+
+  <style>
+    .memo {
+      line-height: 1.7;
+    }
+    .memo :global(h1) {
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+    .memo :global(h2) {
+      font-size: 1.25rem;
+      margin-top: 40px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+    }
+    .memo :global(h3) {
+      font-size: 1.05rem;
+      margin-top: 28px;
+    }
+    .memo :global(pre) {
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      line-height: 1.45;
+      font-size: 0.85rem;
+    }
+    .memo :global(table) {
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 12px 0;
+    }
+    .memo :global(th),
+    .memo :global(td) {
+      border: 1px solid #ddd;
+      padding: 4px 10px;
+      white-space: nowrap;
+    }
+    .memo :global(th) {
+      background: #f0f0f0;
+    }
+    .memo :global(tr:nth-child(even) td) {
+      background: #f7f7f7;
+    }
+  </style>
+</Layout>

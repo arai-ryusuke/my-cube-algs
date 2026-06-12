@@ -12,7 +12,7 @@ const summary = CATEGORIES.map((c) => ({
 <Layout title="My Cube Algs">
   <h1>My Cube Algs</h1>
   <p class="lead">
-    スピードキューブの手順 (OLL / PLL / F2L) をローカルで管理し、cubing.js の twisty-player で再生確認できる個人リポジトリ。
+    スピードキューブの手順 (OLL / PLL / F2L) をローカルで管理し、cubing.js の twisty-player で再生確認できる個人リポジトリ。3BLD のエッジ 3-style 整理メモも置いている。
   </p>
   <div class="category-grid">
     {
@@ -23,6 +23,10 @@ const summary = CATEGORIES.map((c) => ({
         </a>
       ))
     }
+    <a class="category-card" href={link('3bld/')}>
+      <span class="label">3BLD</span>
+      <span class="count">edge 3-style 手順ツリー</span>
+    </a>
   </div>
 
   <style>
