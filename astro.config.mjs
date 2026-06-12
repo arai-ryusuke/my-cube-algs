@@ -4,4 +4,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://arai-ryusuke.github.io',
   base: '/my-cube-algs',
+  markdown: {
+    shikiConfig: {
+      theme: 'github-light',
+    },
+  },
 });
