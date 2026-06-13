@@ -5,7 +5,8 @@
   "algorithms": [
     {
       "id": "primary",
-      "notation": "R",
+      "notation": "L' U2 L U L' U' L",
+      "comment": "cubevoyage より(仮置き)",
       "is_primary": true
     }
   ]
